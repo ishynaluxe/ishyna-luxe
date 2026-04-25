@@ -1,0 +1,2169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ishyna Luxe - Premium bridal jewellery atelier from Ayodhya. Carefully crafted pieces to enhance bridal beauty and make special occasions unforgettable.">
+    <meta name="keywords" content="bridal jewellery, luxury jewellery, Ayodhya jewellery, Indian bridal, gold jewellery, Ishyna Luxe">
+    <title>Ishyna Luxe — Fine Jewellery Atelier | Bridal Jewellery from Ayodhya</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Josefin+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    
+    <style>
+        /* ============================================
+           RESET & BASE STYLES
+           ============================================ */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            /* Core Palette */
+            --black: #0A0A0A;
+            --charcoal: #1A1A1A;
+            --gold: #C9A96E;
+            --gold-light: #E4C99A;
+            --gold-dark: #8B7444;
+            --cream: #FAF6F0;
+            --ivory: #F5EEE4;
+            --blush: #E8D5C4;
+            --sand: #D4B896;
+            --espresso: #2C231A;
+            --text-dark: #2A2522;
+            --text-light: #D4D0CA;
+            
+            /* Fonts */
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'Cormorant Garamond', serif;
+            --font-sans: 'Josefin Sans', sans-serif;
+            
+            /* Spacing */
+            --section-padding: clamp(4rem, 10vw, 8rem);
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            background: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+            font-weight: 400;
+        }
+        
+        img, video {
+            max-width: 100%;
+            display: block;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        /* ============================================
+           DECORATIVE ELEMENTS
+           ============================================ */
+        .gold-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem auto;
+            max-width: 200px;
+        }
+        
+        .gold-divider::before,
+        .gold-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+        
+        .gold-divider-icon {
+            color: var(--gold);
+            font-size: 0.875rem;
+            letter-spacing: 0.3em;
+        }
+        
+        .eyebrow {
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+        
+        /* ============================================
+           NAVIGATION
+           ============================================ */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(201, 169, 110, 0.15);
+            transition: all 0.4s ease;
+        }
+        
+        .navbar.scrolled {
+            background: rgba(10, 10, 10, 0.95);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .nav-logo img {
+            height: 55px;
+            width: auto;
+        }
+        
+        .nav-logo-text {
+            font-family: var(--font-display);
+            color: var(--gold);
+            font-size: 1.1rem;
+            font-style: italic;
+            letter-spacing: 0.05em;
+            display: none;
+        }
+        
+        @media (min-width: 768px) {
+            .nav-logo-text {
+                display: block;
+            }
+        }
+        
+        .nav-menu {
+            display: none;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+        
+        @media (min-width: 968px) {
+            .nav-menu {
+                display: flex;
+            }
+        }
+        
+        .nav-menu a {
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--cream);
+            font-weight: 300;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--gold);
+        }
+        
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+        
+        .nav-cta {
+            font-family: var(--font-sans);
+            font-size: 0.8rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--black) !important;
+            background: var(--gold);
+            padding: 0.75rem 1.5rem;
+            border: 1px solid var(--gold);
+            transition: all 0.3s ease;
+        }
+        
+        .nav-cta:hover {
+            background: transparent;
+            color: var(--gold) !important;
+        }
+        
+        .nav-cta::after {
+            display: none !important;
+        }
+        
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        
+        @media (min-width: 968px) {
+            .menu-toggle {
+                display: none;
+            }
+        }
+        
+        .menu-toggle span {
+            width: 28px;
+            height: 1px;
+            background: var(--gold);
+            transition: all 0.3s ease;
+        }
+        
+        .menu-toggle.active span:nth-child(1) {
+            transform: translateY(6px) rotate(45deg);
+        }
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .menu-toggle.active span:nth-child(3) {
+            transform: translateY(-6px) rotate(-45deg);
+        }
+        
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 85%;
+            max-width: 400px;
+            height: 100vh;
+            background: var(--black);
+            padding: 6rem 2rem 2rem;
+            transition: right 0.4s ease;
+            z-index: 999;
+            border-left: 1px solid rgba(201, 169, 110, 0.2);
+        }
+        
+        .mobile-menu.active {
+            right: 0;
+        }
+        
+        .mobile-menu ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .mobile-menu a {
+            font-family: var(--font-display);
+            color: var(--cream);
+            font-size: 1.5rem;
+            letter-spacing: 0.05em;
+            display: block;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(201, 169, 110, 0.1);
+        }
+        
+        /* ============================================
+           HERO SECTION
+           ============================================ */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: var(--black);
+            overflow: hidden;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+        }
+        
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 30%;
+            opacity: 0.5;
+            animation: slowZoom 20s ease-in-out infinite alternate;
+        }
+        
+        @keyframes slowZoom {
+            from { transform: scale(1); }
+            to { transform: scale(1.08); }
+        }
+        
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                linear-gradient(180deg, rgba(10,10,10,0.75) 0%, rgba(10,10,10,0.45) 40%, rgba(10,10,10,0.75) 80%, rgba(10,10,10,0.95) 100%),
+                radial-gradient(ellipse at center, transparent 0%, rgba(10,10,10,0.4) 100%);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 8rem 2rem 6rem;
+            width: 100%;
+            text-align: center;
+            animation: fadeInUp 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero-ornament {
+            display: inline-block;
+            color: var(--gold);
+            font-size: 0.75rem;
+            letter-spacing: 1em;
+            margin-bottom: 2.5rem;
+            opacity: 0.8;
+            padding-left: 1em;
+        }
+        
+        @keyframes shimmer {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+        
+        .hero-eyebrow {
+            font-family: var(--font-sans);
+            font-size: 0.7rem;
+            letter-spacing: 0.6em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            padding-left: 0.6em;
+        }
+        
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.75rem, 7.5vw, 6rem);
+            font-weight: 400;
+            line-height: 1.0;
+            color: var(--cream);
+            margin-bottom: 2rem;
+            letter-spacing: -0.015em;
+        }
+        
+        .hero h1 em {
+            font-style: italic;
+            color: var(--gold);
+            font-weight: 400;
+        }
+        
+        .hero-tagline {
+            font-family: var(--font-body);
+            font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+            color: var(--text-light);
+            max-width: 560px;
+            margin: 0 auto 3.5rem;
+            font-style: italic;
+            font-weight: 300;
+            line-height: 1.7;
+            letter-spacing: 0.01em;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1.25rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            padding: 1.25rem 2.75rem;
+            border: 1px solid var(--gold);
+            background: transparent;
+            color: var(--gold);
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: 400;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary {
+            background: var(--gold);
+            color: var(--black);
+        }
+        
+        .btn:hover {
+            background: var(--gold-light);
+            color: var(--black);
+            border-color: var(--gold-light);
+            transform: translateY(-2px);
+            letter-spacing: 0.4em;
+        }
+        
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--gold);
+            border-color: var(--gold);
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            color: var(--gold);
+            font-family: var(--font-sans);
+            font-size: 0.65rem;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            text-align: center;
+            opacity: 0.7;
+        }
+        
+        .scroll-indicator::after {
+            content: '';
+            display: block;
+            width: 1px;
+            height: 45px;
+            background: linear-gradient(180deg, var(--gold) 0%, transparent 100%);
+            margin: 1rem auto 0;
+            animation: scrollLine 2.5s ease-in-out infinite;
+        }
+        
+        @keyframes scrollLine {
+            0% { transform: scaleY(0); transform-origin: top; }
+            50% { transform: scaleY(1); transform-origin: top; }
+            51% { transform-origin: bottom; }
+            100% { transform: scaleY(0); transform-origin: bottom; }
+        }
+        
+        /* ============================================
+           SECTION DEFAULTS
+           ============================================ */
+        section {
+            padding: var(--section-padding) 2rem;
+        }
+        
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+        
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4.5vw, 3.5rem);
+            font-weight: 400;
+            line-height: 1.15;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+        }
+        
+        .section-title em {
+            font-style: italic;
+            color: var(--gold);
+        }
+        
+        .dark-theme .section-title {
+            color: var(--cream);
+        }
+        
+        .section-subtitle {
+            font-size: 1.15rem;
+            font-style: italic;
+            color: var(--text-dark);
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+        
+        .dark-theme .section-subtitle {
+            color: var(--text-light);
+        }
+        
+        /* ============================================
+           ABOUT SECTION
+           ============================================ */
+        .about {
+            background: var(--cream);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        @media (min-width: 968px) {
+            .about-grid {
+                grid-template-columns: 1.1fr 1fr;
+                gap: 6rem;
+            }
+        }
+        
+        .about-text h2 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 400;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+        
+        .about-text h2 em {
+            font-style: italic;
+            color: var(--gold);
+        }
+        
+        .about-text p {
+            font-size: 1.15rem;
+            line-height: 1.85;
+            margin-bottom: 1.25rem;
+            color: var(--text-dark);
+        }
+        
+        .about-text .lead {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--gold-dark);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            padding-left: 1.5rem;
+            border-left: 2px solid var(--gold);
+        }
+        
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid rgba(201, 169, 110, 0.3);
+        }
+        
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: clamp(1.75rem, 3vw, 2.5rem);
+            color: var(--gold);
+            font-weight: 500;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-family: var(--font-sans);
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--text-dark);
+            opacity: 0.7;
+        }
+        
+        .about-visual {
+            position: relative;
+            aspect-ratio: 4/5;
+            max-height: 650px;
+        }
+        
+        .about-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 65% center;
+            filter: sepia(0.08) contrast(1.05) saturate(1.05);
+        }
+        
+        .about-visual::before {
+            content: '';
+            position: absolute;
+            inset: 20px -20px -20px 20px;
+            border: 1px solid var(--gold);
+            z-index: -1;
+        }
+        
+        .about-visual::after {
+            content: '';
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            width: 80px;
+            height: 80px;
+            border-top: 2px solid var(--gold);
+            border-right: 2px solid var(--gold);
+        }
+        
+        /* ============================================
+           VIDEO SHOWCASE SECTION
+           ============================================ */
+        .video-showcase {
+            background: var(--black);
+            padding: var(--section-padding) 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .video-showcase.dark-theme {
+            text-align: center;
+        }
+        
+        .video-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        @media (min-width: 768px) {
+            .video-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+            }
+        }
+        
+        .video-wrapper {
+            position: relative;
+            aspect-ratio: 9/16;
+            max-height: 700px;
+            overflow: hidden;
+            background: var(--charcoal);
+            border: 1px solid rgba(201, 169, 110, 0.3);
+        }
+        
+        .video-wrapper video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .video-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 70%, rgba(10,10,10,0.4) 100%);
+            z-index: 2;
+            pointer-events: none;
+        }
+        
+        .video-label {
+            position: absolute;
+            bottom: 1.5rem;
+            left: 1.5rem;
+            z-index: 3;
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold);
+            padding: 0.5rem 1rem;
+            background: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(201, 169, 110, 0.3);
+        }
+        
+        /* ============================================
+           COLLECTIONS SECTION
+           ============================================ */
+        .collections {
+            background: var(--ivory);
+            position: relative;
+        }
+        
+        .collections-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        
+        .collection-card {
+            position: relative;
+            overflow: hidden;
+            background: var(--black);
+            cursor: pointer;
+            transition: transform 0.5s ease;
+            aspect-ratio: 3/4;
+        }
+        
+        .collection-card:hover {
+            transform: translateY(-8px);
+        }
+        
+        .collection-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.8s ease, opacity 0.4s ease;
+        }
+        
+        /* Specific image positioning for optimal framing */
+        .collection-card.featured img { object-position: center 40%; }
+        .collection-card.card-jhumka img { object-position: 65% center; }
+        .collection-card.card-pendant img { object-position: center 45%; }
+        
+        .collection-card:hover img {
+            transform: scale(1.08);
+            opacity: 0.85;
+        }
+        
+        .collection-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 40%, rgba(10,10,10,0.4) 65%, rgba(10,10,10,0.95) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2rem;
+            transition: background 0.4s ease;
+        }
+        
+        .collection-card:hover .collection-overlay {
+            background: linear-gradient(180deg, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0.5) 50%, rgba(10,10,10,0.95) 100%);
+        }
+        
+        .collection-number {
+            font-family: var(--font-sans);
+            font-size: 0.7rem;
+            letter-spacing: 0.3em;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+        
+        .collection-title {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            color: var(--cream);
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+        
+        .collection-title em {
+            font-style: italic;
+            color: var(--gold-light);
+        }
+        
+        .collection-desc {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            color: var(--text-light);
+            font-style: italic;
+            line-height: 1.5;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+        
+        .collection-card:hover .collection-desc {
+            opacity: 1;
+            max-height: 100px;
+            margin-top: 0.5rem;
+        }
+        
+        .collection-card.featured {
+            grid-column: span 1;
+        }
+        
+        @media (min-width: 768px) {
+            .collection-card.featured {
+                grid-column: span 2;
+                grid-row: span 2;
+                aspect-ratio: 1/1;
+            }
+        }
+        
+        /* ============================================
+           MARKETING STRATEGY SECTION
+           ============================================ */
+        .marketing {
+            background: var(--black);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .marketing::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+        
+        .marketing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        
+        .strategy-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(201, 169, 110, 0.2);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .strategy-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+        
+        .strategy-card:hover {
+            background: rgba(201, 169, 110, 0.05);
+            border-color: var(--gold);
+            transform: translateY(-6px);
+        }
+        
+        .strategy-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .strategy-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--gold);
+            border-radius: 50%;
+            color: var(--gold);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .strategy-card:hover .strategy-icon {
+            background: var(--gold);
+            color: var(--black);
+        }
+        
+        .strategy-icon svg {
+            width: 28px;
+            height: 28px;
+        }
+        
+        .strategy-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--cream);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+        
+        .strategy-desc {
+            font-family: var(--font-body);
+            color: var(--text-light);
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+        
+        /* ============================================
+           OFFERS SECTION
+           ============================================ */
+        .offers {
+            background: linear-gradient(135deg, var(--cream) 0%, var(--blush) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .offers::before {
+            content: '';
+            position: absolute;
+            top: 10%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(201, 169, 110, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .offers::after {
+            content: '';
+            position: absolute;
+            bottom: 10%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(139, 34, 82, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .offers-container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .offers-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        
+        @media (min-width: 768px) {
+            .offers-grid {
+                grid-template-columns: 2fr 1fr;
+            }
+        }
+        
+        .offer-card {
+            padding: 3rem 2.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.4s ease;
+        }
+        
+        .offer-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .offer-main {
+            background: var(--black);
+            color: var(--cream);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 350px;
+            border: 1px solid var(--gold);
+        }
+        
+        .offer-side {
+            background: linear-gradient(135deg, var(--espresso) 0%, var(--black) 100%);
+            color: var(--cream);
+            min-height: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border: 1px solid rgba(201, 169, 110, 0.4);
+        }
+        
+        .offer-badge {
+            font-family: var(--font-sans);
+            font-size: 0.7rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            padding: 0.5rem 1rem;
+            background: rgba(201, 169, 110, 0.1);
+            border: 1px solid rgba(201, 169, 110, 0.4);
+            display: inline-block;
+            align-self: flex-start;
+        }
+        
+        .offer-side .offer-badge {
+            color: var(--gold);
+            background: rgba(201, 169, 110, 0.1);
+            border-color: rgba(201, 169, 110, 0.4);
+        }
+        
+        .offer-discount {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 8vw, 5rem);
+            color: var(--gold);
+            font-weight: 500;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+        
+        .offer-side .offer-discount {
+            color: var(--gold-light);
+        }
+        
+        .offer-title {
+            font-family: var(--font-display);
+            font-size: clamp(1.5rem, 3vw, 2.25rem);
+            color: var(--cream);
+            margin-bottom: 1rem;
+            font-weight: 400;
+            font-style: italic;
+        }
+        
+        .offer-desc {
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .offer-validity {
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(201, 169, 110, 0.3);
+        }
+        
+        .offer-side .offer-validity {
+            color: var(--gold-light);
+            border-top-color: rgba(201, 169, 110, 0.3);
+        }
+        
+        .offers-secondary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .offer-strip {
+            background: var(--black);
+            color: var(--cream);
+            padding: 1.5rem 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            border-left: 3px solid var(--gold);
+        }
+        
+        .offer-strip-icon {
+            font-size: 1.75rem;
+            color: var(--gold);
+        }
+        
+        .offer-strip-text h4 {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            color: var(--cream);
+            margin-bottom: 0.25rem;
+            font-weight: 500;
+        }
+        
+        .offer-strip-text p {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            color: var(--text-light);
+            font-style: italic;
+            line-height: 1.3;
+        }
+        
+        /* ============================================
+           LIFECYCLE SECTION
+           ============================================ */
+        .lifecycle {
+            background: var(--black);
+            position: relative;
+        }
+        
+        .lifecycle-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .lifecycle-stages {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.5rem;
+            margin: 4rem 0;
+            position: relative;
+        }
+        
+        @media (max-width: 640px) {
+            .lifecycle-stages {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .stage {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            position: relative;
+            opacity: 0.35;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(201, 169, 110, 0.2);
+        }
+        
+        .stage.active {
+            opacity: 1;
+            background: rgba(201, 169, 110, 0.08);
+            border-color: var(--gold);
+            transform: scale(1.02);
+        }
+        
+        .stage-number {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            color: var(--gold);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stage.active .stage-number {
+            color: var(--gold-light);
+        }
+        
+        .stage-name {
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--cream);
+        }
+        
+        .stage-indicator {
+            font-family: var(--font-sans);
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-top: 0.75rem;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .stage.active .stage-indicator {
+            opacity: 1;
+        }
+        
+        .lifecycle-explanation {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(201, 169, 110, 0.2);
+            padding: 3rem 2.5rem;
+            text-align: center;
+        }
+        
+        .lifecycle-explanation h3 {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+            font-style: italic;
+        }
+        
+        .lifecycle-explanation p {
+            font-family: var(--font-body);
+            font-size: 1.15rem;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .lifecycle-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(201, 169, 110, 0.15);
+        }
+        
+        .lifecycle-point {
+            text-align: left;
+        }
+        
+        .lifecycle-point-title {
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+        
+        .lifecycle-point-text {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+        
+        /* ============================================
+           CONTACT / FOOTER
+           ============================================ */
+        .contact {
+            background: var(--cream);
+            padding: var(--section-padding) 2rem 3rem;
+            position: relative;
+        }
+        
+        .contact-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .contact h2 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4.5vw, 3.5rem);
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+        
+        .contact h2 em {
+            font-style: italic;
+            color: var(--gold);
+        }
+        
+        .contact-sub {
+            font-size: 1.15rem;
+            font-style: italic;
+            color: var(--text-dark);
+            opacity: 0.8;
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+        
+        .contact-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2.5rem;
+            margin: 3rem 0;
+            padding: 3rem 2rem;
+            border-top: 1px solid rgba(201, 169, 110, 0.3);
+            border-bottom: 1px solid rgba(201, 169, 110, 0.3);
+        }
+        
+        .contact-item {
+            text-align: center;
+        }
+        
+        .contact-item-label {
+            font-family: var(--font-sans);
+            font-size: 0.7rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.75rem;
+        }
+        
+        .contact-item-value {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+        
+        .contact-item-value a {
+            transition: color 0.3s ease;
+        }
+        
+        .contact-item-value a:hover {
+            color: var(--gold);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 2.5rem;
+        }
+        
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border: 1px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background: var(--gold);
+            color: var(--cream);
+            transform: translateY(-3px);
+        }
+        
+        .social-link svg {
+            width: 20px;
+            height: 20px;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--black);
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(201, 169, 110, 0.2);
+        }
+        
+        .footer-logo {
+            height: 80px;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .footer-brand {
+            font-family: var(--font-display);
+            color: var(--gold);
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-tagline {
+            font-family: var(--font-body);
+            color: var(--text-light);
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-copy {
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            color: var(--text-light);
+            opacity: 0.6;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(201, 169, 110, 0.1);
+            margin-top: 2rem;
+        }
+        
+        /* ============================================
+           SCROLL ANIMATIONS
+           ============================================ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* ============================================
+           RESPONSIVE TWEAKS
+           ============================================ */
+        
+        /* Tablet */
+        @media (max-width: 900px) {
+            :root {
+                --section-padding: clamp(3.5rem, 8vw, 6rem);
+            }
+            
+            .hero-content {
+                padding: 7rem 1.5rem 5rem;
+            }
+            
+            .collections-grid {
+                gap: 1.5rem;
+            }
+            
+            .collection-card.featured {
+                grid-column: span 1 !important;
+                grid-row: span 1 !important;
+                aspect-ratio: 3/4 !important;
+            }
+            
+            .offer-card {
+                padding: 2.5rem 1.75rem;
+            }
+        }
+        
+        /* Mobile */
+        @media (max-width: 640px) {
+            section {
+                padding: 3.5rem 1.25rem;
+            }
+            
+            .nav-container {
+                padding: 0.75rem 1.25rem;
+            }
+            
+            .nav-logo img {
+                height: 42px;
+            }
+            
+            .mobile-menu a {
+                font-size: 1.3rem;
+            }
+            
+            .hero {
+                min-height: 95vh;
+            }
+            
+            .hero-content {
+                padding: 6rem 1.25rem 5rem;
+            }
+            
+            .hero-ornament {
+                letter-spacing: 0.6em;
+                margin-bottom: 2rem;
+            }
+            
+            .hero-eyebrow {
+                letter-spacing: 0.35em;
+                font-size: 0.65rem;
+                margin-bottom: 1.75rem;
+            }
+            
+            .hero-tagline {
+                margin-bottom: 2.5rem;
+                font-size: 1.05rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+                max-width: 280px;
+                margin: 0 auto;
+                gap: 0.875rem;
+            }
+            
+            .btn {
+                padding: 1rem 1.5rem;
+                font-size: 0.7rem;
+                letter-spacing: 0.3em;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .scroll-indicator {
+                display: none;
+            }
+            
+            .section-header {
+                margin-bottom: 3rem;
+            }
+            
+            .about-grid {
+                gap: 3rem;
+            }
+            
+            .about-stats {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1rem;
+            }
+            
+            .stat-number {
+                font-size: 1.5rem;
+            }
+            
+            .stat-label {
+                font-size: 0.6rem;
+                letter-spacing: 0.15em;
+            }
+            
+            .about-visual::before {
+                inset: 10px -10px -10px 10px;
+            }
+            
+            .about-visual::after {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .video-grid {
+                gap: 1.5rem;
+            }
+            
+            .collection-card {
+                aspect-ratio: 4/5;
+            }
+            
+            .collection-title {
+                font-size: 1.4rem;
+            }
+            
+            .collection-overlay {
+                padding: 1.5rem;
+            }
+            
+            .collection-desc {
+                opacity: 1;
+                max-height: none;
+                margin-top: 0.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .strategy-card {
+                padding: 2rem 1.5rem;
+            }
+            
+            .offer-card {
+                padding: 2.25rem 1.5rem;
+                min-height: 300px;
+            }
+            
+            .offer-discount {
+                font-size: 2.75rem;
+            }
+            
+            .offer-strip {
+                padding: 1.25rem 1.5rem;
+                gap: 1rem;
+            }
+            
+            .lifecycle-stages {
+                gap: 0.75rem;
+            }
+            
+            .stage {
+                padding: 1.25rem 0.75rem;
+            }
+            
+            .lifecycle-explanation {
+                padding: 2rem 1.5rem;
+            }
+            
+            .contact-details {
+                padding: 2rem 1rem;
+                gap: 1.75rem;
+            }
+            
+            .footer-logo {
+                height: 60px;
+            }
+        }
+        
+        /* Extra small mobile */
+        @media (max-width: 380px) {
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+            
+            .section-title {
+                font-size: 1.75rem;
+            }
+        }
+        
+        /* Accessibility - respect reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- ========== NAVIGATION ========== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <img src="assets/images/logo.png" alt="Ishyna Luxe - Fine Jewellery Atelier">
+                <span class="nav-logo-text">Ishyna Luxe</span>
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#collections">Collections</a></li>
+                <li><a href="#marketing">Our Strategy</a></li>
+                <li><a href="#offers">Offers</a></li>
+                <li><a href="#contact" class="nav-cta">Contact</a></li>
+            </ul>
+            
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#collections">Collections</a></li>
+            <li><a href="#marketing">Our Strategy</a></li>
+            <li><a href="#offers">Offers</a></li>
+            <li><a href="#lifecycle">Our Journey</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+    
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <img src="assets/images/hero-bridal-set.png" alt="Premium bridal gold jewellery set - Ishyna Luxe">
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-ornament">◆  ◆  ◆</div>
+            <p class="hero-eyebrow">Fine Jewellery Atelier  ·  Ayodhya</p>
+            <h1>
+                Adorned in<br>
+                <em>Timeless Elegance</em>
+            </h1>
+            <p class="hero-tagline">
+                Handcrafted bridal jewellery, made with quiet artistry — for the bride whose story deserves to be worn.
+            </p>
+            <div class="hero-buttons">
+                <a href="#collections" class="btn btn-primary">Explore Collections</a>
+                <a href="#about" class="btn">Our Story</a>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">Scroll</div>
+    </section>
+    
+    <!-- ========== ABOUT SECTION ========== -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <span class="eyebrow">The Ishyna Luxe Atelier</span>
+                    <h2>Where Every Bride<br>Becomes an <em>Heirloom</em></h2>
+                    
+                    <p class="lead">
+                        A house of fine jewellery, born in the sacred city of Ayodhya — devoted to the quiet artistry of bridal adornment.
+                    </p>
+                    
+                    <p>
+                        At <strong>Ishyna Luxe</strong>, we believe that jewellery is more than ornament — it is memory, legacy, and love made tangible. Each piece passes through the hands of master artisans who honour tradition while reimagining it for the modern bride.
+                    </p>
+                    
+                    <p>
+                        From regal temple-inspired necklaces to delicate everyday heirlooms, our creations are shaped with intention, finished with patience, and entrusted to you as keepsakes — worthy of being passed from one generation to the next.
+                    </p>
+                    
+                    <p style="font-size: 1.25rem; color: var(--gold-dark); font-style: italic; margin-top: 1.5rem;">
+                        Luxury that feels effortless.<br>Beauty that lasts forever.
+                    </p>
+                    
+                    <div class="about-stats">
+                        <div>
+                            <div class="stat-number">18K</div>
+                            <div class="stat-label">Gold Polished</div>
+                        </div>
+                        <div>
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Anti-Tarnish</div>
+                        </div>
+                        <div>
+                            <div class="stat-number">∞</div>
+                            <div class="stat-label">Handcrafted</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-visual reveal">
+                    <img src="assets/images/bridal-earrings.png" alt="Handcrafted bridal jhumka earrings with pearls - Ishyna Luxe">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ========== VIDEO SHOWCASE ========== -->
+    <section class="video-showcase dark-theme">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="eyebrow">In Motion</span>
+                <h2 class="section-title">See the <em>Craft</em> Come Alive</h2>
+                <div class="gold-divider">
+                    <span class="gold-divider-icon">◆</span>
+                </div>
+                <p class="section-subtitle">Witness the detail, the shimmer, and the soul of every piece — crafted for the bride who shines from within.</p>
+            </div>
+            
+            <div class="video-grid reveal">
+                <div class="video-wrapper">
+                    <video autoplay muted loop playsinline>
+                        <source src="assets/videos/showcase-1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <span class="video-label">Signature Series</span>
+                </div>
+                <div class="video-wrapper">
+                    <video autoplay muted loop playsinline>
+                        <source src="assets/videos/showcase-2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <span class="video-label">Bridal Edit</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ========== COLLECTIONS SECTION ========== -->
+    <section class="collections" id="collections">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="eyebrow">Promotional Jewellery Designs</span>
+                <h2 class="section-title">The <em>Ishyna</em> Collections</h2>
+                <div class="gold-divider">
+                    <span class="gold-divider-icon">✦</span>
+                </div>
+                <p class="section-subtitle">Each collection is a story — from regal bridal sets to delicate everyday elegance. Discover pieces that speak to every chapter of your journey.</p>
+            </div>
+            
+            <div class="collections-grid reveal">
+                
+                <!-- Featured - Bridal Set -->
+                <div class="collection-card featured">
+                    <img src="assets/images/hero-bridal-set.png" alt="Heritage Bridal Set - long gold rani haar with earrings">
+                    <div class="collection-overlay">
+                        <span class="collection-number">01 · Signature</span>
+                        <h3 class="collection-title">Heritage <em>Bridal Sets</em></h3>
+                        <p class="collection-desc">Majestic rani haar necklaces paired with statement earrings — designed for the regal bride.</p>
+                    </div>
+                </div>
+                
+                <!-- Bridal Earrings -->
+                <div class="collection-card card-jhumka">
+                    <img src="assets/images/jhumka-set.png" alt="Kundan jhumka earrings with pearl hand jewelry">
+                    <div class="collection-overlay">
+                        <span class="collection-number">02</span>
+                        <h3 class="collection-title">Kundan <em>Jhumkas</em></h3>
+                        <p class="collection-desc">Handcrafted jhumkas with pearl chains for timeless bridal grace.</p>
+                    </div>
+                </div>
+                
+                <!-- Layered Necklace -->
+                <div class="collection-card">
+                    <img src="assets/images/layered-necklace.png" alt="Layered gold chain necklace - modern elegance">
+                    <div class="collection-overlay">
+                        <span class="collection-number">03</span>
+                        <h3 class="collection-title">Layered <em>Chains</em></h3>
+                        <p class="collection-desc">Modern 18K gold-polished layering pieces for everyday luxury.</p>
+                    </div>
+                </div>
+                
+                <!-- Delicate Rings -->
+                <div class="collection-card">
+                    <img src="assets/images/rings-collection.png" alt="Delicate adjustable rings with crystals - floral designs">
+                    <div class="collection-overlay">
+                        <span class="collection-number">04</span>
+                        <h3 class="collection-title">Delicate <em>Rings</em></h3>
+                        <p class="collection-desc">Floral-inspired adjustable rings set with crystals.</p>
+                    </div>
+                </div>
+                
+                <!-- Planet Pendant -->
+                <div class="collection-card card-pendant">
+                    <img src="assets/images/planet-pendant.png" alt="Celestial planet pendant necklace">
+                    <div class="collection-overlay">
+                        <span class="collection-number">05</span>
+                        <h3 class="collection-title">Celestial <em>Pendants</em></h3>
+                        <p class="collection-desc">Whimsical pieces that turn everyday into poetry.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- ========== MARKETING STRATEGY SECTION ========== -->
+    <section class="marketing dark-theme" id="marketing">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="eyebrow">Our Digital Marketing Approach</span>
+                <h2 class="section-title">How We <em>Reach</em> Every Bride</h2>
+                <div class="gold-divider">
+                    <span class="gold-divider-icon">◆</span>
+                </div>
+                <p class="section-subtitle">A thoughtful digital strategy built on visual storytelling, community, and discoverability — crafted to connect with brides at every touchpoint.</p>
+            </div>
+            
+            <div class="marketing-grid reveal">
+                
+                <div class="strategy-card">
+                    <div class="strategy-icon">
+                        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                            <rect x="3" y="3" width="18" height="18" rx="5"/>
+                            <circle cx="12" cy="12" r="4"/>
+                            <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3 class="strategy-title">Instagram Promotion</h3>
+                    <p class="strategy-desc">Daily reels, bridal moodboards, and behind-the-scenes glimpses at <strong>@ishynaluxe</strong> — turning scrollers into brides who dream with us.</p>
+                </div>
+                
+                <div class="strategy-card">
+                    <div class="strategy-icon">
+                        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="9"/>
+                            <path d="M12 7l-2 10M13 11a3 3 0 1 0-6 0 3 3 0 0 0 6 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="strategy-title">Pinterest Inspiration</h3>
+                    <p class="strategy-desc">Curated design boards showcasing bridal inspiration — becoming the go-to source when brides-to-be begin planning their most beautiful day.</p>
+                </div>
+                
+                <div class="strategy-card">
+                    <div class="strategy-icon">
+                        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                            <circle cx="11" cy="11" r="7"/>
+                            <path d="m21 21-4.3-4.3"/>
+                            <path d="M11 8v6M8 11h6"/>
+                        </svg>
+                    </div>
+                    <h3 class="strategy-title">SEO Foundations</h3>
+                    <p class="strategy-desc">Optimized product pages, keyword-rich content, and Google My Business for Ayodhya — ensuring brides find us the moment they start searching.</p>
+                </div>
+                
+                <div class="strategy-card">
+                    <div class="strategy-icon">
+                        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                            <path d="M20 11.08V8l-6-6H6a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h6"/>
+                            <path d="M14 3v5h5M18 21l2-2-2-2M14 17l-2 2 2 2"/>
+                        </svg>
+                    </div>
+                    <h3 class="strategy-title">Customer Engagement</h3>
+                    <p class="strategy-desc">WhatsApp consultations, personalized DM responses, styling advice, and exclusive loyalty offers — every bride feels personally cared for.</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- ========== OFFERS SECTION ========== -->
+    <section class="offers" id="offers">
+        <div class="container offers-container">
+            <div class="section-header reveal">
+                <span class="eyebrow">Limited Time Only</span>
+                <h2 class="section-title">Exclusive <em>Bridal Season</em> Offers</h2>
+                <div class="gold-divider">
+                    <span class="gold-divider-icon">✦</span>
+                </div>
+                <p class="section-subtitle">Step into elegance with luxury that feels effortless — our exclusive festive and bridal season offers make owning a piece of Ishyna more special than ever.</p>
+            </div>
+            
+            <div class="offers-grid reveal">
+                
+                <div class="offer-card offer-main">
+                    <span class="offer-badge">★ Grand Bridal Sale</span>
+                    <div class="offer-discount">50–70% OFF</div>
+                    <h3 class="offer-title">On Selected Bridal Designs</h3>
+                    <p class="offer-desc">Our finest handcrafted pieces — from elegant everyday chains to majestic bridal statements — now at exceptional prices. Each piece 18K gold polished, anti-tarnish, and designed to shine with you.</p>
+                    <div class="offer-validity">⏳ Limited Period · DM @ishynaluxe to Shop</div>
+                </div>
+                
+                <div class="offer-card offer-side">
+                    <span class="offer-badge">✦ Festive Special</span>
+                    <div class="offer-discount">Flat ₹500</div>
+                    <h3 class="offer-title">Off Your First Order</h3>
+                    <p class="offer-desc">Welcome to the Ishyna family — celebrate with us.</p>
+                    <div class="offer-validity">Use Code: ISHYNA500</div>
+                </div>
+                
+            </div>
+            
+            <div class="offers-secondary reveal">
+                
+                <div class="offer-strip">
+                    <span class="offer-strip-icon">✦</span>
+                    <div class="offer-strip-text">
+                        <h4>Free Shipping</h4>
+                        <p>On orders above ₹2,999 across India</p>
+                    </div>
+                </div>
+                
+                <div class="offer-strip">
+                    <span class="offer-strip-icon">◆</span>
+                    <div class="offer-strip-text">
+                        <h4>Bridal Consultation</h4>
+                        <p>Complimentary styling for bridal parties</p>
+                    </div>
+                </div>
+                
+                <div class="offer-strip">
+                    <span class="offer-strip-icon">❖</span>
+                    <div class="offer-strip-text">
+                        <h4>Loyalty Rewards</h4>
+                        <p>Earn exclusive perks on every purchase</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- ========== LIFECYCLE SECTION ========== -->
+    <section class="lifecycle dark-theme" id="lifecycle">
+        <div class="container">
+            <div class="lifecycle-content">
+                <div class="section-header reveal">
+                    <span class="eyebrow">Our Journey</span>
+                    <h2 class="section-title">A Brand in its <em>Beginnings</em></h2>
+                    <div class="gold-divider">
+                        <span class="gold-divider-icon">◆</span>
+                    </div>
+                    <p class="section-subtitle">Understanding where we are helps us grow with purpose. Today, Ishyna Luxe proudly stands in the Introduction Stage of its brand lifecycle.</p>
+                </div>
+                
+                <div class="lifecycle-stages reveal">
+                    <div class="stage active">
+                        <div class="stage-number">01</div>
+                        <div class="stage-name">Introduction</div>
+                        <div class="stage-indicator">★ We Are Here</div>
+                    </div>
+                    <div class="stage">
+                        <div class="stage-number">02</div>
+                        <div class="stage-name">Growth</div>
+                        <div class="stage-indicator">Next</div>
+                    </div>
+                    <div class="stage">
+                        <div class="stage-number">03</div>
+                        <div class="stage-name">Maturity</div>
+                        <div class="stage-indicator">Future</div>
+                    </div>
+                    <div class="stage">
+                        <div class="stage-number">04</div>
+                        <div class="stage-name">Decline</div>
+                        <div class="stage-indicator">—</div>
+                    </div>
+                </div>
+                
+                <div class="lifecycle-explanation reveal">
+                    <h3>The Introduction Stage</h3>
+                    <p>
+                        As a newly launched premium bridal jewellery atelier, Ishyna Luxe is in its most exciting chapter — building brand awareness, establishing identity, and earning trust one bride at a time. This stage is marked by focused investment in marketing, storytelling, and community-building.
+                    </p>
+                    <p style="color: var(--gold); font-style: italic;">
+                        "Every empire begins with a single piece. Ours begins with you."
+                    </p>
+                    
+                    <div class="lifecycle-points">
+                        <div class="lifecycle-point">
+                            <div class="lifecycle-point-title">◆ Focus</div>
+                            <div class="lifecycle-point-text">Building brand recognition and trust</div>
+                        </div>
+                        <div class="lifecycle-point">
+                            <div class="lifecycle-point-title">◆ Strategy</div>
+                            <div class="lifecycle-point-text">Heavy investment in digital marketing</div>
+                        </div>
+                        <div class="lifecycle-point">
+                            <div class="lifecycle-point-title">◆ Audience</div>
+                            <div class="lifecycle-point-text">Early adopters and bridal trendsetters</div>
+                        </div>
+                        <div class="lifecycle-point">
+                            <div class="lifecycle-point-title">◆ Goal</div>
+                            <div class="lifecycle-point-text">Transition to the Growth Stage</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ========== CONTACT ========== -->
+    <section class="contact" id="contact">
+        <div class="contact-content reveal">
+            <span class="eyebrow">Visit · Connect · Shop</span>
+            <h2>Let's Create Your <em>Forever Moment</em></h2>
+            <p class="contact-sub">Whether you're planning your bridal day or simply treating yourself, we'd love to welcome you into the Ishyna family.</p>
+            
+            <div class="contact-details">
+                <div class="contact-item">
+                    <div class="contact-item-label">◆ Atelier</div>
+                    <div class="contact-item-value">Ayodhya, Uttar Pradesh<br>India</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-item-label">◆ Instagram</div>
+                    <div class="contact-item-value">
+                        <a href="https://instagram.com/ishynaluxe" target="_blank" rel="noopener">@ishynaluxe</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-item-label">◆ Pinterest</div>
+                    <div class="contact-item-value">
+                        <a href="https://pinterest.com" target="_blank" rel="noopener">Design Inspirations</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-item-label">◆ Orders</div>
+                    <div class="contact-item-value">DM on Instagram<br>or WhatsApp</div>
+                </div>
+            </div>
+            
+            <div class="social-links">
+                <a href="https://instagram.com/ishynaluxe" class="social-link" target="_blank" rel="noopener" aria-label="Instagram">
+                    <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                        <rect x="3" y="3" width="18" height="18" rx="5"/>
+                        <circle cx="12" cy="12" r="4"/>
+                        <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+                    </svg>
+                </a>
+                <a href="https://pinterest.com" class="social-link" target="_blank" rel="noopener" aria-label="Pinterest">
+                    <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="9"/>
+                        <path d="M11.5 7a4.5 4.5 0 1 1 1.8 8.6L11 21"/>
+                    </svg>
+                </a>
+                <a href="#" class="social-link" aria-label="WhatsApp">
+                    <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                        <path d="M21 11.5a8.5 8.5 0 0 1-12.8 7.4L3 21l2.2-5.1A8.5 8.5 0 1 1 21 11.5z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <img src="assets/images/logo.png" alt="Ishyna Luxe" class="footer-logo">
+        <div class="footer-brand">Ishyna Luxe</div>
+        <p class="footer-tagline">Fine Jewellery Atelier · Ayodhya, India</p>
+        <div class="footer-copy">© 2026 Ishyna Luxe · All Rights Reserved · Crafted with Love</div>
+    </footer>
+    
+    <script>
+        // =========== NAVBAR SCROLL ===========
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // =========== MOBILE MENU ===========
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        });
+        
+        // Close mobile menu on link click
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+        
+        // =========== SCROLL REVEAL ANIMATIONS ===========
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        
+        // =========== SMOOTH SCROLL OFFSET FOR NAV ===========
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    const navHeight = navbar.offsetHeight;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // =========== VIDEO PLAY ON VIEWPORT ===========
+        const videos = document.querySelectorAll('video');
+        const videoObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const video = entry.target;
+                if (entry.isIntersecting) {
+                    video.play().catch(err => console.log('Autoplay prevented:', err));
+                } else {
+                    video.pause();
+                }
+            });
+        }, { threshold: 0.25 });
+        
+        videos.forEach(video => videoObserver.observe(video));
+    </script>
+</body>
+</html>

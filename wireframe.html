@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ishyna Luxe — Wireframe Blueprint</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Courier New', monospace;
+            background: #F5F0E8;
+            padding: 2rem;
+            color: #1a1a1a;
+        }
+        .wireframe-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+        }
+        .wf-header {
+            background: #0A0A0A;
+            color: #C9A96E;
+            text-align: center;
+            padding: 2rem;
+            border-bottom: 2px solid #C9A96E;
+        }
+        .wf-header h1 {
+            font-family: Georgia, serif;
+            font-size: 2rem;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+        .wf-header p {
+            font-size: 0.85rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            opacity: 0.8;
+        }
+        .wf-block {
+            border-bottom: 2px dashed #aaa;
+            padding: 1.5rem;
+            position: relative;
+            background: white;
+        }
+        .wf-label {
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background: #C9A96E;
+            color: white;
+            padding: 3px 12px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+        .wf-box {
+            border: 2px solid #333;
+            padding: 1rem;
+            margin: 0.75rem 0;
+            text-align: center;
+            background: #fafafa;
+            position: relative;
+        }
+        .wf-dark { background: #1a1a1a; color: #C9A96E; border-color: #C9A96E; }
+        .wf-gold { background: #C9A96E; color: #1a1a1a; border-color: #8B7444; }
+        .wf-grid {
+            display: grid;
+            gap: 0.75rem;
+            margin: 0.75rem 0;
+        }
+        .wf-grid-2 { grid-template-columns: 1fr 1fr; }
+        .wf-grid-3 { grid-template-columns: repeat(3, 1fr); }
+        .wf-grid-4 { grid-template-columns: repeat(4, 1fr); }
+        .wf-grid-5 { grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr; }
+        .wf-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: #0A0A0A;
+            color: #C9A96E;
+            border: 2px solid #C9A96E;
+        }
+        .wf-nav-links {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.75rem;
+        }
+        .wf-hero {
+            background: #1a1a1a;
+            color: #C9A96E;
+            padding: 3rem 1rem;
+            text-align: center;
+            border: 2px solid #C9A96E;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1rem;
+        }
+        .wf-hero-img {
+            font-size: 0.8rem;
+            opacity: 0.6;
+            border: 1px dashed #C9A96E;
+            padding: 0.5rem;
+            margin: 0 auto;
+            max-width: 300px;
+        }
+        .wf-title {
+            font-family: Georgia, serif;
+            font-size: 1.5rem;
+            font-style: italic;
+        }
+        .wf-subtitle { font-size: 0.85rem; opacity: 0.8; }
+        .wf-btn {
+            display: inline-block;
+            border: 1px solid currentColor;
+            padding: 0.5rem 1rem;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin: 0.25rem;
+        }
+        .wf-img-placeholder {
+            background: linear-gradient(45deg, #e0d4c0 25%, #d0c4b0 25%, #d0c4b0 50%, #e0d4c0 50%, #e0d4c0 75%, #d0c4b0 75%);
+            background-size: 20px 20px;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 0.8rem;
+            border: 1px solid #8B7444;
+        }
+        .wf-video {
+            background: #0A0A0A;
+            color: #C9A96E;
+            min-height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #C9A96E;
+            font-size: 0.9rem;
+        }
+        .wf-footer {
+            background: #0A0A0A;
+            color: #C9A96E;
+            padding: 1.5rem;
+            text-align: center;
+            font-size: 0.8rem;
+        }
+        .legend {
+            max-width: 1000px;
+            margin: 2rem auto;
+            background: white;
+            padding: 2rem;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+        }
+        .legend h2 {
+            font-family: Georgia, serif;
+            color: #8B7444;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+        .legend-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .swatch {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .swatch-color {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #ccc;
+        }
+        .print-note {
+            max-width: 1000px;
+            margin: 1rem auto;
+            padding: 1rem;
+            background: #fff9e6;
+            border: 1px solid #C9A96E;
+            font-size: 0.85rem;
+            text-align: center;
+            font-style: italic;
+        }
+        @media print {
+            body { background: white; padding: 0; }
+            .print-note { display: none; }
+            .wireframe-container, .legend { box-shadow: none; page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="print-note">
+        📄 This is your wireframe blueprint — you can print it or sketch this layout in your assignment notebook. Press Ctrl+P (or Cmd+P) to save as PDF.
+    </div>
+    
+    <div class="wireframe-container">
+        
+        <div class="wf-header">
+            <h1>Ishyna Luxe — Website Wireframe</h1>
+            <p>Digital Marketing Assignment · Visual Blueprint</p>
+        </div>
+        
+        <!-- NAVIGATION -->
+        <div class="wf-block">
+            <span class="wf-label">1 · Navigation Bar (Sticky)</span>
+            <div class="wf-nav">
+                <span>◈ LOGO · Ishyna Luxe</span>
+                <div class="wf-nav-links">
+                    <span>HOME</span>
+                    <span>ABOUT</span>
+                    <span>COLLECTIONS</span>
+                    <span>STRATEGY</span>
+                    <span>OFFERS</span>
+                    <span class="wf-btn wf-gold">CONTACT</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- HERO SECTION -->
+        <div class="wf-block">
+            <span class="wf-label">2 · Hero / Landing Section (Full Screen)</span>
+            <div class="wf-hero">
+                <div class="wf-hero-img">◆ BACKGROUND IMAGE: Bridal Gold Set ◆</div>
+                <div style="font-size: 0.7rem; letter-spacing: 0.3em;">FINE JEWELLERY ATELIER · AYODHYA</div>
+                <div class="wf-title">Adorn Your Forever With <em>Timeless Elegance</em></div>
+                <div class="wf-subtitle">Handcrafted bridal jewellery made to make your special day unforgettable.</div>
+                <div>
+                    <span class="wf-btn wf-gold">EXPLORE COLLECTIONS</span>
+                    <span class="wf-btn">OUR STORY</span>
+                </div>
+                <div style="font-size: 0.65rem; margin-top: 1rem;">↓ SCROLL</div>
+            </div>
+        </div>
+        
+        <!-- ABOUT -->
+        <div class="wf-block">
+            <span class="wf-label">3 · About Us Section</span>
+            <div class="wf-grid wf-grid-2">
+                <div class="wf-box" style="text-align: left; padding: 1.5rem;">
+                    <div style="font-size: 0.7rem; color: #8B7444; letter-spacing: 0.3em;">ABOUT ISHYNA LUXE</div>
+                    <h3 style="font-family: Georgia, serif; font-style: italic; margin: 0.5rem 0;">Crafted for the Bride Who Desires More</h3>
+                    <p style="font-size: 0.85rem; border-left: 2px solid #C9A96E; padding-left: 0.75rem; margin: 0.75rem 0;">"Every piece is a celebration of heritage and luxury..."</p>
+                    <p style="font-size: 0.8rem;">Brand story · Ayodhya heritage · Premium positioning · Quality commitment...</p>
+                    <div class="wf-grid wf-grid-3" style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #C9A96E;">
+                        <div style="font-size: 0.75rem;"><b>18K</b><br>Gold</div>
+                        <div style="font-size: 0.75rem;"><b>100%</b><br>Anti-Tarnish</div>
+                        <div style="font-size: 0.75rem;"><b>∞</b><br>Handcrafted</div>
+                    </div>
+                </div>
+                <div class="wf-img-placeholder">◆ Product Image: Bridal Earrings ◆</div>
+            </div>
+        </div>
+        
+        <!-- VIDEO SHOWCASE -->
+        <div class="wf-block" style="background: #0A0A0A; color: #C9A96E;">
+            <span class="wf-label">4 · Video Showcase (Dark Section)</span>
+            <div style="text-align: center; padding: 1rem 0;">
+                <div style="font-size: 0.7rem; letter-spacing: 0.3em;">IN MOTION</div>
+                <h3 style="font-family: Georgia, serif; font-style: italic; margin: 0.5rem 0 1rem;">See the Craft Come Alive</h3>
+            </div>
+            <div class="wf-grid wf-grid-2">
+                <div class="wf-video">▶ VIDEO 1 · Signature Series (autoplay muted)</div>
+                <div class="wf-video">▶ VIDEO 2 · Bridal Edit (autoplay muted)</div>
+            </div>
+        </div>
+        
+        <!-- COLLECTIONS -->
+        <div class="wf-block">
+            <span class="wf-label">5 · Collections / Designs Section</span>
+            <div style="text-align: center; margin-bottom: 1rem;">
+                <div style="font-size: 0.7rem; color: #8B7444; letter-spacing: 0.3em;">PROMOTIONAL JEWELLERY DESIGNS</div>
+                <h3 style="font-family: Georgia, serif; font-style: italic; margin: 0.5rem 0;">The Ishyna Collections</h3>
+            </div>
+            <div class="wf-grid" style="grid-template-columns: 2fr 1fr 1fr;">
+                <div class="wf-img-placeholder" style="grid-row: span 2; min-height: 220px;">◆ FEATURED: Bridal Sets (large) ◆</div>
+                <div class="wf-img-placeholder">Kundan Jhumkas</div>
+                <div class="wf-img-placeholder">Layered Chains</div>
+                <div class="wf-img-placeholder">Delicate Rings</div>
+                <div class="wf-img-placeholder">Celestial Pendants</div>
+            </div>
+        </div>
+        
+        <!-- MARKETING STRATEGY -->
+        <div class="wf-block" style="background: #0A0A0A; color: #C9A96E;">
+            <span class="wf-label">6 · Marketing Strategy Section</span>
+            <div style="text-align: center; padding: 1rem 0;">
+                <div style="font-size: 0.7rem; letter-spacing: 0.3em;">OUR DIGITAL MARKETING APPROACH</div>
+                <h3 style="font-family: Georgia, serif; font-style: italic; margin: 0.5rem 0 1rem;">How We Reach Every Bride</h3>
+            </div>
+            <div class="wf-grid wf-grid-4">
+                <div class="wf-box wf-dark" style="padding: 1rem;">
+                    <div style="font-size: 1.5rem;">📷</div>
+                    <div style="font-weight: bold; margin: 0.5rem 0;">Instagram</div>
+                    <div style="font-size: 0.7rem;">@ishynaluxe reels, moodboards</div>
+                </div>
+                <div class="wf-box wf-dark" style="padding: 1rem;">
+                    <div style="font-size: 1.5rem;">📌</div>
+                    <div style="font-weight: bold; margin: 0.5rem 0;">Pinterest</div>
+                    <div style="font-size: 0.7rem;">Bridal inspiration boards</div>
+                </div>
+                <div class="wf-box wf-dark" style="padding: 1rem;">
+                    <div style="font-size: 1.5rem;">🔍</div>
+                    <div style="font-weight: bold; margin: 0.5rem 0;">SEO</div>
+                    <div style="font-size: 0.7rem;">Keywords, Google My Business</div>
+                </div>
+                <div class="wf-box wf-dark" style="padding: 1rem;">
+                    <div style="font-size: 1.5rem;">💬</div>
+                    <div style="font-weight: bold; margin: 0.5rem 0;">Engagement</div>
+                    <div style="font-size: 0.7rem;">WhatsApp, DMs, loyalty</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- OFFERS -->
+        <div class="wf-block" style="background: linear-gradient(135deg, #FAF6F0, #E8D5C4);">
+            <span class="wf-label">7 · Promotional Offers Section</span>
+            <div style="text-align: center; margin-bottom: 1rem;">
+                <div style="font-size: 0.7rem; color: #8B7444; letter-spacing: 0.3em;">LIMITED TIME ONLY</div>
+                <h3 style="font-family: Georgia, serif; font-style: italic; margin: 0.5rem 0;">Exclusive Bridal Season Offers</h3>
+            </div>
+            <div class="wf-grid" style="grid-template-columns: 2fr 1fr;">
+                <div class="wf-box wf-dark" style="padding: 1.5rem; text-align: left;">
+                    <div style="font-size: 0.7rem; border: 1px solid #C9A96E; padding: 0.25rem 0.5rem; display: inline-block;">★ GRAND BRIDAL SALE</div>
+                    <div style="font-size: 2.5rem; font-family: Georgia, serif; margin: 0.5rem 0;">50–70% OFF</div>
+                    <div style="font-style: italic;">On Selected Bridal Designs</div>
+                    <div style="font-size: 0.75rem; margin-top: 0.75rem;">⏳ DM @ishynaluxe to Shop</div>
+                </div>
+                <div class="wf-box" style="background: #2C231A; color: white; padding: 1.5rem;">
+                    <div style="font-size: 0.7rem; border: 1px solid white; padding: 0.25rem 0.5rem; display: inline-block;">✦ FESTIVE</div>
+                    <div style="font-size: 1.8rem; font-family: Georgia, serif; margin: 0.5rem 0;">₹500 OFF</div>
+                    <div style="font-size: 0.85rem;">First Order · ISHYNA500</div>
+                </div>
+            </div>
+            <div class="wf-grid wf-grid-3" style="margin-top: 1rem;">
+                <div class="wf-box wf-dark" style="padding: 0.75rem; font-size: 0.8rem; text-align: left;">✦ Free Shipping ₹2999+</div>
+                <div class="wf-box wf-dark" style="padding: 0.75rem; font-size: 0.8rem; text-align: left;">◆ Bridal Consultation</div>
+                <div class="wf-box wf-dark" style="padding: 0.75rem; font-size: 0.8rem; text-align: left;">❖ Loyalty Rewards</div>
+            </div>
+        </div>
+        
+        <!-- LIFECYCLE -->
+        <div class="wf-block" style="background: #0A0A0A; color: #C9A96E;">
+            <span class="wf-label">8 · Company Lifecycle Stage</span>
+            <div style="text-align: center; padding: 1rem 0;">
+                <div style="font-size: 0.7rem; letter-spacing: 0.3em;">OUR JOURNEY</div>
+                <h3 style="font-family: Georgia, serif; font-style: italic; margin: 0.5rem 0 1rem;">A Brand in its Beginnings</h3>
+            </div>
+            <div class="wf-grid wf-grid-4">
+                <div class="wf-box" style="background: #C9A96E; color: #0A0A0A; padding: 1rem;">
+                    <div style="font-size: 1.5rem; font-family: Georgia;">01</div>
+                    <div style="font-size: 0.7rem; letter-spacing: 0.2em;">INTRODUCTION</div>
+                    <div style="font-size: 0.6rem; margin-top: 0.5rem;">★ WE ARE HERE</div>
+                </div>
+                <div class="wf-box wf-dark" style="padding: 1rem; opacity: 0.5;">
+                    <div style="font-size: 1.5rem; font-family: Georgia;">02</div>
+                    <div style="font-size: 0.7rem;">GROWTH</div>
+                </div>
+                <div class="wf-box wf-dark" style="padding: 1rem; opacity: 0.5;">
+                    <div style="font-size: 1.5rem; font-family: Georgia;">03</div>
+                    <div style="font-size: 0.7rem;">MATURITY</div>
+                </div>
+                <div class="wf-box wf-dark" style="padding: 1rem; opacity: 0.5;">
+                    <div style="font-size: 1.5rem; font-family: Georgia;">04</div>
+                    <div style="font-size: 0.7rem;">DECLINE</div>
+                </div>
+            </div>
+            <div class="wf-box wf-dark" style="margin-top: 1rem; padding: 1.5rem; text-align: center;">
+                <div style="font-style: italic; color: #C9A96E;">"The Introduction Stage"</div>
+                <div style="font-size: 0.8rem; margin-top: 0.5rem;">Brand awareness · Digital marketing focus · Building trust · Early adopters</div>
+            </div>
+        </div>
+        
+        <!-- CONTACT -->
+        <div class="wf-block">
+            <span class="wf-label">9 · Contact Section</span>
+            <div style="text-align: center; padding: 1rem;">
+                <div style="font-size: 0.7rem; color: #8B7444; letter-spacing: 0.3em;">VISIT · CONNECT · SHOP</div>
+                <h3 style="font-family: Georgia, serif; font-style: italic; margin: 0.5rem 0 1rem;">Let's Create Your Forever Moment</h3>
+                <div class="wf-grid wf-grid-4" style="padding: 1rem 0; border-top: 1px solid #C9A96E; border-bottom: 1px solid #C9A96E;">
+                    <div>
+                        <div style="font-size: 0.7rem; color: #8B7444;">◆ ATELIER</div>
+                        <div style="font-size: 0.85rem;">Ayodhya, UP</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 0.7rem; color: #8B7444;">◆ INSTAGRAM</div>
+                        <div style="font-size: 0.85rem;">@ishynaluxe</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 0.7rem; color: #8B7444;">◆ PINTEREST</div>
+                        <div style="font-size: 0.85rem;">Inspirations</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 0.7rem; color: #8B7444;">◆ ORDERS</div>
+                        <div style="font-size: 0.85rem;">DM / WhatsApp</div>
+                    </div>
+                </div>
+                <div style="margin-top: 1rem;">⊙ IG · ⊙ PIN · ⊙ WA</div>
+            </div>
+        </div>
+        
+        <!-- FOOTER -->
+        <div class="wf-footer">
+            ◈ ISHYNA LUXE ◈<br>
+            <span style="font-size: 0.7rem; opacity: 0.7;">Fine Jewellery Atelier · Ayodhya · © 2026</span>
+        </div>
+        
+    </div>
+    
+    <!-- DESIGN LEGEND -->
+    <div class="legend">
+        <h2>✦ Design System Reference</h2>
+        
+        <h3 style="margin-top: 1rem; margin-bottom: 0.5rem; font-size: 0.9rem; color: #8B7444;">COLOR PALETTE</h3>
+        <div class="legend-grid">
+            <div class="swatch">
+                <div class="swatch-color" style="background: #0A0A0A;"></div>
+                <div><b>Black</b><br><small>#0A0A0A</small></div>
+            </div>
+            <div class="swatch">
+                <div class="swatch-color" style="background: #C9A96E;"></div>
+                <div><b>Gold</b><br><small>#C9A96E</small></div>
+            </div>
+            <div class="swatch">
+                <div class="swatch-color" style="background: #FAF6F0;"></div>
+                <div><b>Cream</b><br><small>#FAF6F0</small></div>
+            </div>
+            <div class="swatch">
+                <div class="swatch-color" style="background: #E8D5C4;"></div>
+                <div><b>Blush</b><br><small>#E8D5C4</small></div>
+            </div>
+            <div class="swatch">
+                <div class="swatch-color" style="background: #2C231A;"></div>
+                <div><b>Espresso</b><br><small>#2C231A</small></div>
+            </div>
+        </div>
+        
+        <h3 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 0.9rem; color: #8B7444;">TYPOGRAPHY</h3>
+        <div class="legend-grid">
+            <div>
+                <div style="font-family: Georgia, serif; font-size: 1.5rem; font-style: italic;">Playfair Display</div>
+                <small>Headlines & Titles</small>
+            </div>
+            <div>
+                <div style="font-family: 'Times New Roman', serif; font-size: 1.3rem;">Cormorant Garamond</div>
+                <small>Body Text</small>
+            </div>
+            <div>
+                <div style="font-family: Arial, sans-serif; font-size: 1rem; letter-spacing: 0.15em;">JOSEFIN SANS</div>
+                <small>Nav & Labels</small>
+            </div>
+        </div>
+        
+        <h3 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 0.9rem; color: #8B7444;">LAYOUT PRINCIPLES</h3>
+        <ul style="font-size: 0.9rem; padding-left: 1.5rem; line-height: 1.8;">
+            <li>Alternating dark (black) and light (cream) sections for visual rhythm</li>
+            <li>Gold accents used sparingly — as dividers, headlines, CTAs</li>
+            <li>Serif display fonts for elegance, sans-serif only for navigation</li>
+            <li>Generous white space — luxury comes from what's NOT on the page</li>
+            <li>Mobile-first responsive grid (1 column on mobile → 4 columns on desktop)</li>
+            <li>Hover animations on cards · Fade-in on scroll · Autoplay muted videos</li>
+        </ul>
+    </div>
+    
+</body>
+</html>
